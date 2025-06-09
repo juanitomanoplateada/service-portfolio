@@ -6,7 +6,7 @@ A stylized Angular 20 portfolio inspired by the Mgs. This project features iDroi
 
 ## 🚀 Demo
 
-🌐 [https://service-portfolio.vercel.app](https://service-portfolio.vercel.app)
+🌐 [https://service-portfolio-two.vercel.app](https://service-portfolio-two.vercel.app)
 
 ---
 
