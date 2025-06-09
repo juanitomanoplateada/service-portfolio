@@ -58,7 +58,7 @@ export class ProjectsComponent {
       description:
         'A stylized Angular portfolio themed after Metal Gear Solid, featuring codec animations, cassette-style service cards, and iDroid-style expandable sections.',
       status: 'active',
-      link: 'https://github.com/juanitomanoplateada/mgs-portfolio',
+      link: 'https://github.com/juanitomanoplateada/service-portfolio',
     },
   ];
 
