@@ -1,0 +1,30 @@
+<section class="contact">
+  <div class="contact-init" *ngIf="!showPanel">
+    <span class="blinking-question">?</span>
+  </div>
+
+  <div class="contact-panel" [class.expand-animation]="showPanel">
+    <div class="contact-header">
+      <h2>Contact</h2>
+      <img src="raaa.png" alt="Contact Icon" />
+    </div>
+
+    <ul class="contact-info" *ngIf="showItems">
+      <li
+        *ngFor="let item of contactItems; let i = index"
+        [style.animationDelay]="(i * 0.2) + 's'"
+      >
+        {{ item.label }}:
+        <span *ngIf="!isLink(item.value)">{{ item.value }}</span>
+        <a
+          *ngIf="isLink(item.value)"
+          [href]="item.value"
+          target="_blank"
+          rel="noopener"
+        >
+          {{ item.value }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

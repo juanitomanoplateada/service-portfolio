@@ -1,0 +1,37 @@
+<nav class="navbar">
+  <a routerLink="/" class="logo">Service Portfolio</a>
+
+  <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+
+  <ul class="nav-links" [class.open]="menuOpen">
+    <li>
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="closeMenu()"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()"
+        >About Me</a
+      >
+    </li>
+    <li>
+      <a routerLink="/services" routerLinkActive="active" (click)="closeMenu()"
+        >Services</a
+      >
+    </li>
+    <li>
+      <a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()"
+        >Projects</a
+      >
+    </li>
+    <li>
+      <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()"
+        >Contact</a
+      >
+    </li>
+  </ul>
+</nav>

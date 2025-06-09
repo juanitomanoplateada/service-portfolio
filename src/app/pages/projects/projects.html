@@ -1,0 +1,23 @@
+<section class="projects">
+  <h1>Project Archives</h1>
+
+  <div class="project-list" [class.reveal]="projectsReady">
+    <div class="project" *ngFor="let p of projects">
+      <div class="project-header">
+        <span class="mission-code">{{ p.code }}</span>
+        <span
+          class="status-indicator"
+          [class.active]="p.status === 'active'"
+        ></span>
+      </div>
+
+      <div class="project-body">
+        <h2>{{ p.title }}</h2>
+        <p>{{ p.description }}</p>
+        <a [href]="p.link" target="_blank" class="mission-button"
+          >View Repository</a
+        >
+      </div>
+    </div>
+  </div>
+</section>

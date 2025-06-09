@@ -1,0 +1,198 @@
+.services {
+  padding: 2rem;
+  background-color: var(--color-background);
+  color: var(--color-background-codec-invert);
+  min-height: 81vh;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--color-hud);
+    border-bottom: 2px solid var(--color-hud);
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .cassette-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    justify-items: center;
+
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+
+    &.reveal {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem 2rem;
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 900px;
+      margin: 0 auto;
+      padding-top: 3rem;
+    }
+  }
+
+  .cassette {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    height: 225px;
+
+    .cassette-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    &:hover .cassette-inner {
+      transform: rotateY(180deg);
+    }
+
+    .cassette-front,
+    .cassette-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
+      backface-visibility: hidden;
+      box-sizing: border-box;
+      border: 2px solid var(--color-hud);
+      background-color: var(--color-background-codec);
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cassette-front {
+      position: relative;
+
+      .screw {
+        width: 10px;
+        height: 10px;
+        background-color: var(--color-hud);
+        border-radius: 50%;
+        position: absolute;
+
+        &.top-left {
+          top: 5px;
+          left: 5px;
+        }
+        &.top-right {
+          top: 5px;
+          right: 5px;
+        }
+        &.bottom-left {
+          bottom: 5px;
+          left: 5px;
+        }
+        &.bottom-right {
+          bottom: 5px;
+          right: 5px;
+        }
+      }
+
+      .label {
+        background-color: var(--color-background-nav-footer);
+        color: var(--color-hud);
+        padding: 0.3rem 1rem;
+        font-family: "Courier New", monospace;
+        font-size: 1rem;
+        border: 1px solid var(--color-hud);
+        margin-top: 1rem;
+        z-index: 2;
+      }
+
+      .inner-frame {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        border: 1px solid var(--color-hud);
+        opacity: 0.2;
+        pointer-events: none;
+      }
+
+      .spools-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+
+        .spool-box {
+          display: flex;
+          align-items: center;
+          gap: 3rem;
+          border: 1px solid var(--color-hud);
+          padding: 0.75rem 1.5rem;
+          background-color: var(--color-background-codec);
+          box-shadow: inset 0 0 4px var(--color-hud);
+          margin-bottom: 3rem;
+
+          .spool {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--color-hud);
+            border-radius: 50%;
+            background-color: var(--color-background);
+            box-shadow: inset 0 0 4px var(--color-hud);
+          }
+
+          .tape-window {
+            width: 60px;
+            height: 20px;
+            background-color: var(--color-background);
+            border: 1px solid var(--color-hud);
+            box-shadow: inset 0 0 3px var(--color-hud);
+          }
+        }
+      }
+    }
+
+    .cassette-back {
+      transform: rotateY(180deg);
+
+      h3 {
+        color: var(--color-hud);
+        margin-bottom: 0.5rem;
+      }
+
+      .list-background {
+        background-color: var(--color-background-nav-footer);
+        padding: 1rem;
+        border-radius: 5px;
+        border: 1px solid var(--color-hud);
+        width: 100%;
+        margin-bottom: 2.5rem;
+        text-align: center;
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            color: var(--color-background-codec-invert);
+            margin: 0.3rem 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,144 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 81vh;
+  background-color: var(--color-background);
+
+  .codec-box {
+    background-color: var(--color-background-codec);
+    color: var(--color-hud);
+    border: 2px solid var(--color-hud);
+    width: 200px;
+    height: 60px;
+    overflow: hidden;
+    padding: 0.5rem;
+    transition: all 0.6s ease;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--color-hud);
+
+    &.expanded {
+      width: 600px;
+      height: auto;
+      padding: 1rem;
+    }
+
+    .codec-header {
+      font-weight: bold;
+      font-size: 1.2rem;
+      border-bottom: 1px solid var(--color-hud);
+      margin-bottom: 0.5rem;
+      text-align: center;
+
+      .incoming-text {
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+
+      .blinking-circle {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: var(--color-hud);
+        border-radius: 50%;
+        animation: blink 1s infinite;
+      }
+    }
+
+    .codec-body {
+      display: flex;
+      gap: 1rem;
+      opacity: 0;
+      animation: fadeIn 1s forwards 0.5s;
+
+      .codec-image {
+        margin: 0.5rem 0rem 0rem 1rem;
+        flex-shrink: 0;
+
+        img {
+          width: 120px;
+          height: auto;
+          filter: drop-shadow(0 0 4px var(--color-hud));
+        }
+      }
+
+      .codec-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+        flex-grow: 1;
+
+        .codec-line {
+          text-align: left;
+          width: 100%;
+        }
+
+        .cta-button {
+          margin-top: 0.5rem;
+          display: inline-block;
+          padding: 0.5rem 1rem;
+          background-color: var(--color-hud);
+          color: var(--color-background-codec);
+          text-decoration: none;
+          font-weight: bold;
+          border: none;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: var(--color-hud-two);
+            color: var(--color-background-codec-invert);
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .home {
+    .codec-box {
+      &.expanded {
+        width: 95%;
+      }
+
+      .codec-body {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .codec-image {
+          margin: 0;
+        }
+
+        .codec-info {
+          align-items: center;
+
+          .codec-line {
+            text-align: center;
+          }
+
+          .cta-button {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

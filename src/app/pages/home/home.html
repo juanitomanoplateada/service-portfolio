@@ -1,0 +1,35 @@
+<section class="home">
+  <div
+    class="codec-box"
+    [class.expanded]="codecExpanded"
+    (click)="expandCodec()"
+  >
+    <div class="codec-header">
+      <ng-container *ngIf="showIncoming; else codecTitle">
+        <span class="incoming-text">INCOMING TRANSMISSION</span>
+        <span class="blinking-circle"></span>
+      </ng-container>
+      <ng-template #codecTitle>CODEC TRANSMISSION</ng-template>
+    </div>
+
+    <div class="codec-body" *ngIf="codecExpanded">
+      <div class="codec-image">
+        <img src="raaa.png" alt="Emblem" />
+      </div>
+
+      <div class="codec-info">
+        <div class="codec-line">
+          Name: <span>Edwin Steven Niño Torres</span>
+        </div>
+        <div class="codec-line">
+          Role: Systems & Computing Engineering Student
+        </div>
+        <div class="codec-line">
+          Status: Available for internships or projects
+        </div>
+
+        <a routerLink="/services" class="cta-button">View Services</a>
+      </div>
+    </div>
+  </div>
+</section>

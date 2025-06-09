@@ -1,0 +1,36 @@
+<section class="services">
+  <h1>Services</h1>
+
+  <div class="cassette-grid" [class.reveal]="cassetesReady">
+    <div class="cassette" *ngFor="let cassette of cassettes">
+      <div class="cassette-inner">
+        <div class="cassette-front">
+          <span class="screw top-left"></span>
+          <span class="screw top-right"></span>
+          <span class="screw bottom-left"></span>
+          <span class="screw bottom-right"></span>
+
+          <div class="label">{{ cassette.title }}</div>
+          <div class="inner-frame"></div>
+
+          <div class="spools-wrapper">
+            <div class="spool-box">
+              <div class="spool"></div>
+              <div class="tape-window"></div>
+              <div class="spool"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cassette-back">
+          <h3>Skills</h3>
+          <div class="list-background">
+            <ul>
+              <li *ngFor="let item of cassette.tools">{{ item }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+<section class="about">
+  <h1>About Me</h1>
+
+  <div class="idroid-panel">
+    <button class="idroid-toggle" (click)="togglePanel(0)">Q: Who am I?</button>
+    <div class="idroid-body" [class.open]="panels[0]">
+      <p>
+        I'm a Systems and Computing Engineering student at UPTC, currently in
+        the final stage of my academic training. I've worked with technologies
+        like <strong>Java</strong>, <strong>Spring Boot</strong>,
+        <strong>Angular</strong>, and <strong>Python</strong> — always focusing
+        on data handling in both SQL and NoSQL environments.
+      </p>
+    </div>
+  </div>
+
+  <div class="idroid-panel">
+    <button class="idroid-toggle" (click)="togglePanel(1)">
+      Q: What am I looking for?
+    </button>
+    <div class="idroid-body" [class.open]="panels[1]">
+      <p>
+        I'm actively seeking an
+        <strong>internship or professional placement</strong> where I can apply
+        my knowledge, grow my skills, and contribute to building
+        <strong>functional and scalable tech solutions</strong>.
+      </p>
+    </div>
+  </div>
+
+  <div class="idroid-panel">
+    <button class="idroid-toggle" (click)="togglePanel(2)">
+      Q: What inspires me?
+    </button>
+    <div class="idroid-body" [class.open]="panels[2]">
+      <p>
+        Inspired by parrots — their learning, adaptability, and observation — I
+        approach challenges with <strong>curiosity</strong>,
+        <strong>focus</strong>, and <strong>creativity</strong> to find stable
+        and efficient solutions.
+      </p>
+    </div>
+  </div>
+</section>

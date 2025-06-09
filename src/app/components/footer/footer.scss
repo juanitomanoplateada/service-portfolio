@@ -1,0 +1,20 @@
+.footer {
+  background-color: var(--color-background-nav-footer);
+  color: var(--color-background-codec-invert);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  border-top: 2px solid var(--color-hud);
+  box-shadow: 0 -2px 5px rgba(0, 255, 0, 0.2);
+
+  p {
+    margin: 0;
+    letter-spacing: 0.05rem;
+    word-break: break-word;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 0.75rem;
+    padding: 1rem 0.5rem;
+  }
+}
