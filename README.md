@@ -1,59 +1,108 @@
-# ServicePortfolio
+# 📁 Service Portfolio - Metal Gear Solid Style
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
+A stylized Angular 20 portfolio inspired by the Mgs. This project features iDroid-style panels, animated codec UI, cassette-flip service cards, and HUD-like transitions to present services, projects, and contact info.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Demo
 
-```bash
-ng serve
-```
+🌐 [https://service-portfolio.vercel.app](https://service-portfolio.vercel.app)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🎯 Features
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+* 🔋 Standalone Angular 20 architecture
+* 🧠 Codec-style animated welcome screen
+* 💾 Cassette card animations for services (flip reveal)
+* 📂 Project archives with mission-code labels
+* 📡 Contact panel with HUD reveal and typing effect
+* ⚙️ SCSS modular styling and responsive layout
+* 🔁 Deployed on Vercel with automatic rewrites
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🛠️ Tech Stack
 
-```bash
-ng generate --help
-```
+| Purpose    | Tech                    |
+| ---------- | ----------------------- |
+| Framework  | Angular 20 (standalone) |
+| Language   | TypeScript              |
+| Styling    | SCSS                    |
+| Animations | Custom CSS / SCSS       |
+| Hosting    | Vercel                  |
 
-## Building
+---
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 🧩 Project Structure
 
 ```bash
-ng test
+src/
+├── app/
+│   ├── components/       # Navbar, Footer
+│   ├── pages/
+│   │   ├── home/         # Codec intro
+│   │   ├── about/        # About Me panels
+│   │   ├── services/     # Cassette-flip services
+│   │   ├── projects/     # Project mission archive
+│   │   └── contact/      # Expanding HUD contact screen
+│   └── app.config.ts     # Routing
+└── styles.scss           # Global theme and HUD colors
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 🧪 Setup & Run
 
 ```bash
-ng e2e
+# 1. Clone the repo
+https://github.com/juanitomanoplateada/service-portfolio.git
+
+# 2. Install dependencies
+npm install
+
+# 3. Run locally
+npm run start
+
+# App will be available at:
+http://localhost:4200
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## ⚙️ Deployment (Vercel)
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Create a `vercel.json` file:
+
+```json
+{
+  "outputDirectory": "dist/service-portfolio",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
+```
+
+2. Push to GitHub → Import repo in [vercel.com](https://vercel.com/import)
+3. Set:
+
+   * Build command: `npm run build`
+   * Output directory: `dist/service-portfolio`
+
+---
+
+## 📬 Contact
+
+* 📧 [edwinnino2404@gmail.com](mailto:edwinnino2404@gmail.com)
+* 💼 [LinkedIn](https://www.linkedin.com/in/edwin-steven-ni%C3%B1o-torres-292b01282/)
+* 🛰️ [GitHub](https://github.com/juanitomanoplateada)
+
+---
+
+## 📄 License
+
+Licensed under the MIT License.
+
+---
+
+> Developed with ⚡ by Edwin Steven Niño Torres
