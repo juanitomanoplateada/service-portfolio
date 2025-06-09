@@ -1,4 +1,4 @@
-# 📁 Service Portfolio - Metal Gear Solid Style
+# 📁 Service Portfolio - MGS Style
 
 A stylized Angular 20 portfolio inspired by the Mgs. This project features iDroid-style panels, animated codec UI, cassette-flip service cards, and HUD-like transitions to present services, projects, and contact info.
 
