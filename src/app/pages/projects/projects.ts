@@ -40,9 +40,9 @@ export class ProjectsComponent {
       code: 'RAAA-04',
       title: 'Lanceros Stereo 94.1 FM - Radio Landing Page',
       description:
-        'Angular 17 landing page with SSR and zoneless rendering for a community radio station. Includes live audio streaming with animated canvas, responsive layout, and CI/CD deployment on Vercel.',
+        'Angular 17 single-page application (SPA) for a Colombian community radio station. Implements standalone components, SSR-ready structure, animated canvas, responsive SCSS design, and Vercel-based CI/CD pipeline. Features live audio streaming, programming schedule, and contact integration.',
       status: 'active',
-      link: 'https://github.com/juanitomanoplateada/lanceros-landing',
+      link: 'https://github.com/juanitomanoplateada/ls94.1fm-landing-page',
     },
     {
       code: 'RAAA-05',
