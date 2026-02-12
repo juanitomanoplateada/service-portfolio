@@ -1,0 +1,38 @@
+<section class="experience-section">
+    <div class="elevator-shaft">
+        <div class="cable"></div>
+        <div class="cable"></div>
+    </div>
+
+    <div class="content-wrapper">
+        <h2 class="section-title">Mi Trayectoria</h2>
+
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+
+            @for (item of experienceList; track i; let i = $index) {
+            <div class="experience-item" [class.left]="item.side === 'left'" [class.right]="item.side === 'right'">
+
+                <div class="timeline-node">
+                    <div class="floor-indicator">{{ i + 1 }}</div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="card-header">
+                        <span class="year">{{ item.year }}</span>
+                        <h3 class="role">{{ item.title }}</h3>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="company">{{ item.company }}</h4>
+                        <p class="description">{{ item.description }}</p>
+                    </div>
+                    <div class="screw top-left"></div>
+                    <div class="screw top-right"></div>
+                    <div class="screw bottom-left"></div>
+                    <div class="screw bottom-right"></div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

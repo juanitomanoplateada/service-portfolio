@@ -1,0 +1,54 @@
+<section class="skills-section">
+    <div class="content-wrapper">
+        <h2 class="section-title">Tecnologías</h2>
+
+        <div class="navigation-controls">
+            <button class="nav-btn prev" [class.hidden]="!hasPrev" (click)="prevCategory()">&#10094;</button>
+            <button class="nav-btn next" [class.hidden]="!hasNext" (click)="nextCategory()">&#10095;</button>
+        </div>
+
+        <div class="animation-stage" [@slideInOut]="selectedCategoryIndex">
+            @if (selectedCategory; as cat) {
+            <div class="category-panel">
+
+                <h3 class="list-title">{{ cat.name }}</h3>
+
+                <div class="skills-list-panel">
+                    <ul class="skills-list">
+                        @for (skill of cat.skills; track skill.name) {
+                        <li>
+                            {{ skill.name }}
+                        </li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="gears-container">
+                    @for (skill of cat.skills; track skill.name; let i = $index) {
+                    @if (skill.group === 'java-spring') {
+                    <div class="gear" [ngClass]="getSkillClass(skill.name) + ' expert'">
+                        <div class="gear-icon-wrapper">
+                            <img [src]="skill.iconUrl" [alt]="skill.name" class="gear-icon">
+                        </div>
+                    </div>
+                    } @else if (skill.group === 'frontend-core') {
+                    <div class="gear" [ngClass]="getSkillClass(skill.name) + ' expert'">
+                        <div class="gear-icon-wrapper">
+                            <img [src]="skill.iconUrl" [alt]="skill.name" class="gear-icon">
+                        </div>
+                    </div>
+                    } @else if (!skill.group) {
+                    <div class="gear"
+                        [ngClass]="getSkillClass(skill.name) + ' ' + (skill.level || (i % 3 === 0 ? 'large' : (i % 3 === 1 ? 'medium' : 'small')))">
+                        <div class="gear-icon-wrapper">
+                            <img [src]="skill.iconUrl" [alt]="skill.name" class="gear-icon">
+                        </div>
+                    </div>
+                    }
+                    }
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

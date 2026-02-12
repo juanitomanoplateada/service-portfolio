@@ -1,0 +1,35 @@
+<header class="main-header">
+    <div class="header-decor top"></div>
+    <div class="nav-wrapper">
+        <nav class="nav-container desktop-nav">
+            <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"
+                class="nav-link">Inicio</a>
+            <a routerLink="/projects" routerLinkActive="active-link" class="nav-link">Mis Proyectos</a>
+            <a routerLink="/skills" routerLinkActive="active-link" class="nav-link">Tecnologías</a>
+            <a routerLink="/experience" routerLinkActive="active-link" class="nav-link">Mi Trayectoria</a>
+            <a routerLink="/contact" routerLinkActive="active-link" class="nav-link">Contacto</a>
+        </nav>
+
+        <button class="hamburger-btn" [class.open]="isMenuOpen" (click)="toggleMenu()" aria-label="Toggle Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <div class="mobile-menu" [class.open]="isMenuOpen">
+            <nav class="mobile-nav">
+                <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"
+                    (click)="closeMenu()" class="mobile-link">Inicio</a>
+                <a routerLink="/projects" routerLinkActive="active-link" (click)="closeMenu()" class="mobile-link">Mis
+                    Proyectos</a>
+                <a routerLink="/skills" routerLinkActive="active-link" (click)="closeMenu()"
+                    class="mobile-link">Tecnologías</a>
+                <a routerLink="/experience" routerLinkActive="active-link" (click)="closeMenu()" class="mobile-link">Mi
+                    Trayectoria</a>
+                <a routerLink="/contact" routerLinkActive="active-link" (click)="closeMenu()"
+                    class="mobile-link">Contacto</a>
+            </nav>
+        </div>
+    </div>
+    <div class="header-decor bottom"></div>
+</header>

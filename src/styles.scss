@@ -1,0 +1,47 @@
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --columbia-blue: #7CB9E8;
+    --columbia-cloud: #F0F8FF;
+    --prophet-gold: #D4AF37;
+    --vintage-cream: #FDF5E6;
+    --patriot-red: #800000;
+    --deep-navy: #002147;
+    --brass: #B5A642;
+
+    --font-main: 'Playfair Display', serif;
+    --font-header: 'Rye', serif;
+    --font-sub: 'Cinzel', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--columbia-blue);
+    color: var(--deep-navy);
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--vintage-cream);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--prophet-gold);
+    border: 1px solid var(--patriot-red);
+}

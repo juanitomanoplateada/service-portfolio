@@ -1,0 +1,235 @@
+@use 'sass:color';
+@import url('https://fonts.googleapis.com/css2?family=Rye&family=Playfair+Display:wght@400;700&family=Cinzel:wght@400;700&display=swap');
+
+$columbia-blue: #7CB9E8;
+$vintage-cream: #FDF5E6;
+$prophet-gold: #D4AF37;
+$patriot-red: #800000;
+$deep-navy: #002147;
+$brass: #B5A642;
+
+.contact-section {
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 80px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, $columbia-blue 0%, #5b9bd5 100%);
+    overflow: hidden;
+    position: relative;
+    font-family: 'Playfair Display', serif;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+    opacity: 0.6;
+}
+
+.columbia-frame {
+    position: relative;
+    width: 600px;
+    padding: 3rem;
+    background: rgba($vintage-cream, 0.95);
+    border: 8px solid $prophet-gold;
+    box-shadow:
+        0 0 0 4px $deep-navy,
+        0 0 30px rgba(0, 0, 0, 0.5),
+        inset 0 0 50px rgba($prophet-gold, 0.2);
+    text-align: center;
+    z-index: 10;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -12px;
+        left: -12px;
+        right: -12px;
+        bottom: -12px;
+        border: 2px solid $prophet-gold;
+        z-index: -1;
+    }
+}
+
+.ornament {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: $prophet-gold;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+
+    &.top-left {
+        top: 0;
+        left: 0;
+        transform: rotate(0deg);
+    }
+
+    &.top-right {
+        top: 0;
+        right: 0;
+        transform: rotate(90deg);
+    }
+
+    &.bottom-right {
+        bottom: 0;
+        right: 0;
+        transform: rotate(180deg);
+    }
+
+    &.bottom-left {
+        bottom: 0;
+        left: 0;
+        transform: rotate(270deg);
+    }
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.personal-info {
+    text-align: center;
+    margin-bottom: 1rem;
+
+    .name {
+        font-family: 'Cinzel', serif;
+        font-size: 1.5rem;
+        color: $patriot-red;
+        letter-spacing: 2px;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        border-bottom: 2px solid $prophet-gold;
+        display: inline-block;
+        padding-bottom: 0.2rem;
+    }
+
+    .role,
+    .university {
+        font-family: 'Playfair Display', serif;
+        font-size: 1rem;
+        color: $deep-navy;
+        margin: 0.3rem 0;
+        font-style: italic;
+    }
+
+    .university {
+        font-weight: 700;
+    }
+}
+
+.columbia-title {
+    font-family: 'Rye', serif;
+    font-size: 3.5rem;
+    color: $deep-navy;
+    margin: 0;
+    text-shadow: 2px 2px 0px rgba($prophet-gold, 0.5);
+    letter-spacing: 2px;
+}
+
+.divider {
+    height: 4px;
+    width: 100px;
+    background: $patriot-red;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: -3px;
+        width: 10px;
+        height: 10px;
+        background: $prophet-gold;
+        transform: rotate(45deg);
+    }
+
+    &::before {
+        left: -15px;
+    }
+
+    &::after {
+        right: -15px;
+    }
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.vigor-btn {
+    background: linear-gradient(to bottom, $deep-navy, color.adjust($deep-navy, $lightness: -10%));
+    border: 2px solid $prophet-gold;
+    color: $vintage-cream;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: 0.5s;
+    }
+
+    &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 20px rgba($prophet-gold, 0.6);
+        border-color: color.adjust($prophet-gold, $lightness: 20%);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+
+        &::before {
+            left: 100%;
+        }
+    }
+
+    .icon {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin-bottom: 0.2rem;
+    }
+
+    .sub-text {
+        font-size: 0.8rem;
+        color: rgba($vintage-cream, 0.7);
+        letter-spacing: 1px;
+    }
+
+    &.linkedin:hover {
+        background: linear-gradient(to bottom, #0077b5, color.adjust(#0077b5, $lightness: -10%));
+    }
+
+    &.github:hover {
+        background: linear-gradient(to bottom, #333, color.adjust(#333, $lightness: -10%));
+    }
+
+    &.email:hover {
+        background: linear-gradient(to bottom, $patriot-red, color.adjust($patriot-red, $lightness: -10%));
+    }
+}

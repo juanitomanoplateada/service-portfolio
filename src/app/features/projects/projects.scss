@@ -1,0 +1,77 @@
+.projects-section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    box-sizing: border-box;
+    background-color: #594d42;
+    background-image:
+        radial-gradient(circle at center, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.6) 100%),
+        url("https://www.transparenttextures.com/patterns/p6.png");
+    background-blend-mode: multiply, normal;
+    overflow: hidden;
+    position: relative;
+    z-index: auto;
+    transform: none;
+}
+
+.projects-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 50%, #2b221b 150%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.shelf-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 0 2rem;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.section-title {
+    font-family: var(--font-header);
+    font-size: 3.5rem;
+    color: var(--prophet-gold);
+    margin: 0;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    letter-spacing: 2px;
+    border-bottom: 2px solid var(--prophet-gold);
+    padding-bottom: 0.5rem;
+
+    @media (max-width: 768px) {
+        font-size: 2rem;
+        text-align: center;
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-section {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .shelf-wrapper {
+        padding: 2rem 0;
+        height: auto;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+}

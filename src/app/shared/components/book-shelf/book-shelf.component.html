@@ -1,0 +1,108 @@
+<div class="library-case">
+    @if (selectedBook) {
+    <div class="backdrop" tabindex="0" (click)="closeInspection()" (keydown.enter)="closeInspection()"></div>
+    }
+
+    <div class="bookshelf">
+        <div class="wood-top"></div>
+
+        @for (shelf of shelves; track shelfIndex; let shelfIndex = $index) {
+        <div class="shelf-row">
+            @for (book of shelf; track i; let i = $index) {
+            <div class="book-spine-wrapper" tabindex="0" [class.is-inspected]="selectedBook === book"
+                [class.is-hidden]="selectedBook && selectedBook !== book" (click)="selectBook(book)"
+                (keydown.enter)="selectBook(book)" [style.--delay]="(shelfIndex * 0.1 + i * 0.05) + 's'">
+
+                @if (selectedBook !== book) {
+                <div class="book-spine" [style.background-color]="book.spineColor" [style.color]="book.spineTextColor">
+                    <div class="spine-text">
+                        <span class="spine-title">{{ book.title }}</span>
+                        <div class="spine-decor" [style.background-color]="book.spineTextColor"></div>
+                        <span class="spine-vol">VOL. {{ i + 1 }}</span>
+                    </div>
+                </div>
+                }
+
+                @if (selectedBook === book) {
+                <div class="open-book-view" (click)="$event.stopPropagation()"
+                    (keydown.enter)="$event.stopPropagation()" tabindex="0">
+                    <div class="book-cover-open">
+                        <button class="close-book-btn" (click)="closeInspection()">×</button>
+
+                        <div class="page left-page">
+                            <div class="page-content">
+                                <h1 class="project-header">{{ book.title }}</h1>
+                                <div class="ornamental-divider"></div>
+                                <h3 class="project-subtitle">{{ book.subtitle }}</h3>
+
+                                <p class="project-desc">{{ book.description }}</p>
+
+                                <div class="tech-section">
+                                    <h4>Realizado con:</h4>
+                                    <div class="tech-tags">
+                                        @for (tech of book.technologies; track tech) {
+                                        <span>{{ tech }}</span>
+                                        }
+                                    </div>
+                                </div>
+
+                                <div class="action-buttons">
+                                    @if (book.demoUrl) {
+                                    <a [href]="book.demoUrl" target="_blank" class="btn-launch">Demo</a>
+                                    }
+                                    @if (book.repoUrl) {
+                                    <a [href]="book.repoUrl" target="_blank" class="btn-schematics">Repositorio</a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="center-crease"></div>
+
+                        <div class="page right-page">
+                            <div class="page-content">
+                                <h3 class="gallery-title">GALERIA</h3>
+
+                                @if (book.galleryImages && book.galleryImages.length > 0) {
+                                <div class="gallery-grid">
+                                    @for (img of book.galleryImages; track img) {
+                                    <div class="gallery-item" tabindex="0" (click)="viewImage(img)"
+                                        (keydown.enter)="viewImage(img)">
+                                        <img [src]="img" alt="Project Screenshot">
+                                    </div>
+                                    }
+                                </div>
+                                } @else {
+                                <div class="no-images">
+                                    <div
+                                        style="font-family: var(--font-sub); color: #888; font-style: italic; margin-top: 2rem;">
+                                        [ No visual records available ]
+                                    </div>
+                                </div>
+                                }
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                }
+
+            </div>
+            }
+        </div>
+        }
+
+        <div class="wood-base"></div>
+
+        @if (selectedImage) {
+        <div class="image-viewer-backdrop" tabindex="0" (click)="closeImageView()" (keydown.enter)="closeImageView()">
+            <button class="close-viewer-btn" (click)="closeImageView()">×</button>
+            <div class="image-viewer-content" (click)="$event.stopPropagation()"
+                (keydown.enter)="$event.stopPropagation()" tabindex="0">
+                <img [src]="selectedImage" alt="Full Screen Preview">
+            </div>
+        </div>
+        }
+    </div>
+</div>
