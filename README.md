@@ -84,7 +84,7 @@ src/
 
 ---
 
-## 🕊️ Constantes y Variables
+## Constantes y Variables
 
 > "Siempre hay un faro, siempre hay un hombre, siempre hay una ciudad."
 
