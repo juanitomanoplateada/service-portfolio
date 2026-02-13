@@ -66,12 +66,7 @@
 }
 
 @media (max-width: 600px) {
-    .footer-content {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .motto-container {
+    .main-footer {
         display: none;
     }
 }
