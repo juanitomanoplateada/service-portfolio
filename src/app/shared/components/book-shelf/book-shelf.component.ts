@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Renderer2, inject } from '@angular/core';
+import { Component, Input, OnInit, Renderer2, inject, HostListener } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { ProjectBook } from '../../models/project-book.model';
 
@@ -47,5 +47,48 @@ export class BookShelfComponent implements OnInit {
 
     closeImageView() {
         this.selectedImage = null;
+    }
+
+    get hasPreviousImage(): boolean {
+        if (!this.selectedBook || !this.selectedBook.galleryImages || !this.selectedImage) return false;
+        const index = this.selectedBook.galleryImages.indexOf(this.selectedImage);
+        return index > 0;
+    }
+
+    get hasNextImage(): boolean {
+        if (!this.selectedBook || !this.selectedBook.galleryImages || !this.selectedImage) return false;
+        const index = this.selectedBook.galleryImages.indexOf(this.selectedImage);
+        return index !== -1 && index < this.selectedBook.galleryImages.length - 1;
+    }
+
+    previousImage(event?: Event) {
+        if (event) event.stopPropagation();
+        if (this.hasPreviousImage) {
+            const index = this.selectedBook!.galleryImages!.indexOf(this.selectedImage!);
+            this.selectedImage = this.selectedBook!.galleryImages![index - 1];
+        }
+    }
+
+    nextImage(event?: Event) {
+        if (event) event.stopPropagation();
+        if (this.hasNextImage) {
+            const index = this.selectedBook!.galleryImages!.indexOf(this.selectedImage!);
+            this.selectedImage = this.selectedBook!.galleryImages![index + 1];
+        }
+    }
+
+    @HostListener('window:keydown', ['$event'])
+    handleKeyDown(event: KeyboardEvent) {
+        if (this.selectedImage) {
+            if (event.key === 'ArrowLeft') {
+                this.previousImage();
+            } else if (event.key === 'ArrowRight') {
+                this.nextImage();
+            } else if (event.key === 'Escape') {
+                this.closeImageView();
+            }
+        } else if (this.selectedBook && event.key === 'Escape') {
+            this.closeInspection();
+        }
     }
 }

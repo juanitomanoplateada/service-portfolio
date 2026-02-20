@@ -98,6 +98,15 @@
         @if (selectedImage) {
         <div class="image-viewer-backdrop" tabindex="0" (click)="closeImageView()" (keydown.enter)="closeImageView()">
             <button class="close-viewer-btn" (click)="closeImageView()">×</button>
+
+            @if (hasPreviousImage) {
+            <button class="nav-btn prev-btn" (click)="previousImage($event)">&#10094;</button>
+            }
+
+            @if (hasNextImage) {
+            <button class="nav-btn next-btn" (click)="nextImage($event)">&#10095;</button>
+            }
+
             <div class="image-viewer-content" (click)="$event.stopPropagation()"
                 (keydown.enter)="$event.stopPropagation()" tabindex="0">
                 <img [src]="selectedImage" alt="Full Screen Preview">

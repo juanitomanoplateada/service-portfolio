@@ -23,7 +23,7 @@ export class Experience {
         {
             id: 'current',
             year: '2026 - Actualidad',
-            title: 'Software Developer ',
+            title: 'Full Stack Developer ',
             company: 'DTIC (UPTC)',
             description: 'Desarrollo y mantenimiento de sistemas de información institucionales. Especialización en Angular, Spring Boot y tecnologías relacionadas.',
             side: 'left'

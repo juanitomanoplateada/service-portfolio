@@ -33,13 +33,13 @@ export class Projects {
       technologies: ['Oracle', 'Spring Boot', 'Keycloak', 'Angular'],
       spineColor: '#af960bff',
       spineTextColor: '#ffffffff',
-      demoUrl: '#',
-      repoUrl: '#',
       galleryImages: [
         'geli/1.png',
         'geli/2.png',
         'geli/3.png',
-        'geli/4.png'
+        'geli/4.png',
+        'geli/5.png',
+        'geli/6.png'
       ]
     },
     {
@@ -50,11 +50,14 @@ export class Projects {
       technologies: ['C++17', 'JUCE 8', 'SQLite3', 'CMake'],
       spineColor: '#E67E22',
       spineTextColor: '#ECF0F1',
-      demoUrl: '#',
       repoUrl: 'https://github.com/juanitomanoplateada/raaadio',
       galleryImages: [
         'raaadio/1.png',
-        'raaadio/2.png'
+        'raaadio/2.png',
+        'raaadio/3.png',
+        'raaadio/4.png',
+        'raaadio/5.png',
+        'raaadio/6.png'
       ]
     }
   ];
