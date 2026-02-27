@@ -59,6 +59,23 @@ export class Projects {
         'raaadio/5.png',
         'raaadio/6.png'
       ]
+    },
+    {
+      id: '4',
+      title: 'ytaPDF',
+      subtitle: 'Editor PDF Web Avanzado',
+      description: 'Editor de PDF web de alto rendimiento para proporcionar una experiencia fluida. Permite visualizar, organizar, modificar y exportar documentos PDF con máxima precisión directamente desde el navegador.',
+      technologies: ['Svelte 5', 'TypeScript', 'Fabric.js v7', 'PDF.js', 'pdf-lib'],
+      spineColor: '#FF3E00',
+      spineTextColor: '#FFFFFF',
+      demoUrl: 'https://ytapdf.vercel.app/',
+      repoUrl: 'https://github.com/juanitomanoplateada/ytaPDF',
+      galleryImages: [
+        'ytapdf/0.png',
+        'ytapdf/1.png',
+        'ytapdf/2.png',
+        'ytapdf/3.png'
+      ]
     }
   ];
 }
