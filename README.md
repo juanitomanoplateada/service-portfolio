@@ -4,7 +4,7 @@ Una aplicación de Portafolio de Servicios interactiva y profesional construida 
 
 [![Demo en Vercel](https://img.shields.io/badge/demo-vercel-%23000000?style=for-the-badge&logo=vercel&logoColor=white)](https://edwinnino-service-portfolio.vercel.app/)
 
-## 🚀 Demo en Vivo
+## Demo en Vivo
 
 Se puede ver el despliegue en vivo en la siguiente URL:
 [https://edwinnino-service-portfolio.vercel.app/](https://edwinnino-service-portfolio.vercel.app/)
