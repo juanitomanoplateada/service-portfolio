@@ -6,7 +6,7 @@
 
     --spine-w: 60px;
     /* Thicker books */
-    --spine-h: 340px;
+    --spine-h: clamp(140px, calc(100vh - 558px), 340px);
     --card-w: 1200px;
     --card-h: 800px;
 
@@ -92,7 +92,7 @@
     display: flex;
     gap: 6px;
     padding: 0 2rem;
-    height: 360px;
+    height: clamp(160px, calc(100vh - 538px), 360px);
     align-items: flex-end;
     background: #150f0b;
     border-bottom: 35px solid #4e342e;
@@ -483,6 +483,10 @@
     transform: rotate(2deg);
     /* Vintage photo look */
     transition: transform 0.3s;
+    aspect-ratio: 16 / 9;
+    background: #e0d5bf;
+    /* Passe-partout: same frame for every photo, whatever its proportions */
+    overflow: hidden;
 }
 
 .gallery-item:nth-child(even) {
@@ -496,7 +500,8 @@
 
 .gallery-item img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: contain;
     display: block;
     filter: sepia(0.3) contrast(1.1);
     /* Old photo filter */

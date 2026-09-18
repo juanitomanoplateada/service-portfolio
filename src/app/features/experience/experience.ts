@@ -22,19 +22,27 @@ export class Experience {
     experienceList: ExperienceItem[] = [
         {
             id: 'current',
-            year: '2026 - Actualidad',
-            title: 'Full Stack Developer ',
+            year: 'Ene 2026 - Actualidad',
+            title: 'Desarrollador Full-Stack',
             company: 'DTIC (UPTC)',
-            description: 'Desarrollo y mantenimiento de sistemas de información institucionales. Especialización en Angular, Spring Boot y tecnologías relacionadas.',
+            description: 'Servicios REST en Java y Spring Boot e interfaces en Angular para los sistemas de información institucionales. Modelado SQL, integración entre plataformas y calidad de código con SonarQube.',
             side: 'left'
         },
         {
             id: 'incitema',
-            year: '2025 - Actualidad',
+            year: 'Mar 2026 - Sep 2026',
             title: 'Practicante',
             company: 'INCITEMA (UPTC)',
-            description: 'Arquitectura y desarrollo integral de GELI, sistema institucional de gestión de equipos de laboratorio. Desarrollo Backend en Spring Boot y Frontend en Angular, integración con el IAM institucional (Keycloak) y persistencia en Oracle.',
+            description: 'Llevé GELI, el sistema de gestión de equipos de laboratorio, de prototipo académico a solución entregada: 71 endpoints en Spring Boot, 51 vistas en Angular, esquema Oracle institucional y autenticación con el Keycloak de la UPTC.',
             side: 'right'
+        },
+        {
+            id: 'lanceros',
+            year: 'Ene 2025 - Dic 2025',
+            title: 'Desarrollador Full Stack',
+            company: 'Lanceros Stereo 94.1 FM',
+            description: 'Llevé una emisora comunitaria de FM a internet: cadena de transmisión con BUTT, Icecast y Zeno Media, API en Flask que sincroniza la canción al aire y portal en Angular. Sigue en operación.',
+            side: 'left'
         }
     ];
 }

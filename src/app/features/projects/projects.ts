@@ -13,17 +13,20 @@ export class Projects {
   projects: ProjectBook[] = [
     {
       id: '1',
-      title: 'Lanceros FM Online',
-      subtitle: 'Sitio Web de Streaming',
-      description: 'Solución integral de radiodifusión digital potenciada por Flask y Angular que orquesta la sincronización precisa de audio y metadatos. Integra Icecast y Zeno Media para garantizar una transmisión continua y escalable, gestionando la ingesta de audio desde consola (BUTT) y exponiendo información en tiempo real a través de APIs robustas.',
-      technologies: ['Icecast', 'BUTT', 'Flask', 'Angular'],
+      title: 'LancerosFM',
+      subtitle: 'Sitio Oficial de Radio en Vivo',
+      description: 'Sitio oficial de Lanceros Stereo 94.1 FM, emisora comunitaria de Tuta, Boyacá. Aplicación Angular prerenderizada y sin backend propio: el reproductor sobrevive a la navegación, la canción al aire llega por Server-Sent Events desde la cadena Icecast/Zeno Media y MediaSession la lleva a la pantalla de bloqueo. Instalable como PWA.',
+      technologies: ['Angular 22', 'TypeScript', 'PWA', 'SSE', 'Icecast'],
       spineColor: '#02203fff',
       spineTextColor: '#ECF0F1',
-      demoUrl: 'https://lancerosfm.online/',
-      repoUrl: 'https://github.com/juanitomanoplateada/lanceros-stereo',
+      demoUrl: 'https://www.lancerosfm.com',
+      repoUrl: 'https://github.com/juanitomanoplateada/lancerosfm',
       galleryImages: [
-        'lanceros/banner.png',
-        'lanceros/desktop_preview.png']
+        'https://raw.githubusercontent.com/juanitomanoplateada/lancerosfm/master/public/img/previews/desktop.png',
+        'https://raw.githubusercontent.com/juanitomanoplateada/lancerosfm/master/public/img/previews/mobile.png',
+        'https://raw.githubusercontent.com/juanitomanoplateada/lancerosfm/master/public/img/brand/banner.png',
+        'https://raw.githubusercontent.com/juanitomanoplateada/lancerosfm/master/public/img/logo-512.webp'
+      ]
     },
     {
       id: '2',

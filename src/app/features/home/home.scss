@@ -1,10 +1,12 @@
 .about-section {
-    min-height: 100vh;
+    height: 100vh;
+    overflow-y: auto;
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding-top: 80px;
+    /* Centrado real: reservar header arriba y footer fijo abajo */
+    padding-top: var(--header-height);
+    padding-bottom: var(--footer-height);
     box-sizing: border-box;
     background-color: var(--vintage-cream);
     background-image: radial-gradient(var(--brass) 1px, transparent 1px);
@@ -14,6 +16,8 @@
 .panel-container {
     display: flex;
     align-items: center;
+    /* margin:auto centra y, si no cabe, deja todo alcanzable con scroll */
+    margin: auto 0;
     gap: 4rem;
     max-width: 1200px;
     width: 90%;

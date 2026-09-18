@@ -9,15 +9,16 @@ $deep-navy: #002147;
 $brass: #B5A642;
 
 .contact-section {
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
-    padding-top: 80px;
+    /* Centrado real: reservar header arriba y footer fijo abajo */
+    padding-top: var(--header-height);
+    padding-bottom: var(--footer-height);
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    align-items: center;
     background: radial-gradient(circle, $columbia-blue 0%, #5b9bd5 100%);
-    overflow: hidden;
+    overflow-y: auto;
     position: relative;
     font-family: 'Playfair Display', serif;
 }
@@ -35,6 +36,8 @@ $brass: #B5A642;
 
 .columbia-frame {
     position: relative;
+    /* margin:auto centra y, si no cabe, deja todo alcanzable con scroll */
+    margin: auto;
     width: 600px;
     padding: 3rem;
     background: rgba($vintage-cream, 0.95);
@@ -178,7 +181,7 @@ $brass: #B5A642;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
-    overflow: hidden;
+    overflow-y: auto;
     font-family: 'Cinzel', serif;
     text-transform: uppercase;
     display: flex;

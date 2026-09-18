@@ -5,9 +5,10 @@
 }
 
 .experience-section {
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
-    padding-top: 80px;
+    padding-top: calc(var(--header-height) + 2rem);
+    padding-bottom: var(--footer-height);
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
@@ -58,6 +59,10 @@
     flex-direction: column;
     align-items: center;
     padding-top: 0rem;
+    /* El ascensor es el fondo; los pisos se recorren aquí dentro */
+    overflow-y: auto;
+    min-height: 0;
+    padding-bottom: 3rem;
 }
 
 .section-title {
@@ -66,7 +71,7 @@
     color: var(--prophet-gold);
     text-transform: uppercase;
     text-shadow: 2px 2px 0px #000;
-    margin-bottom: 7rem;
+    margin-bottom: 3rem;
     text-decoration: underline;
     text-decoration-color: var(--patriot-red);
     text-underline-offset: 8px;
@@ -245,11 +250,10 @@
 
 @media (max-width: 768px) {
     .experience-section {
-        height: auto;
-        min-height: 100vh;
+        height: 100vh;
         overflow-y: auto;
         display: block;
-        padding-top: 60px;
+        padding-top: calc(var(--header-height) + 1rem);
     }
 
     .content-wrapper {
@@ -257,6 +261,8 @@
         padding-top: 1rem;
         display: block;
         padding-bottom: 4rem;
+        height: auto;
+        overflow: visible;
     }
 
     .section-title {

@@ -14,6 +14,17 @@ html {
     --font-main: 'Playfair Display', serif;
     --font-header: 'Rye', serif;
     --font-sub: 'Cinzel', serif;
+
+    /* Alto real del header y del footer fijo: las secciones reservan este espacio */
+    --header-height: 85px;
+    --footer-height: 47px;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --header-height: 67px;
+        --footer-height: 0px;
+    }
 }
 
 * {
